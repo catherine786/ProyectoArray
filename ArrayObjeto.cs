@@ -12,26 +12,7 @@ namespace ArrayObjeto
         {
             marzo[] objMarzo = new marzo[6];
 
-            objMarzo[0].id = 1;
-            objMarzo[0].Nombre = "once";
-
-            objMarzo[1].id = 2;
-            objMarzo[1].Nombre = "San Nicolás";
-
-            objMarzo[2].id = 3;
-            objMarzo[2].Nombre = "Almagro";
-
-            objMarzo[3].id = 4;
-            objMarzo[3].Nombre = "Microcentro";
-
-            objMarzo[4].id = 5;
-            objMarzo[4].Nombre = "Microcentro";
-
-            objMarzo[5].id = 6;
-            objMarzo[5].Nombre = "Microcentro";
-
-            objMarzo[6].id = 7;
-            objMarzo[6].Nombre = "Microcentro";
+            
 
 
         }
@@ -39,28 +20,28 @@ namespace ArrayObjeto
         {
             public marzo() { }
 
+            public string[] sucursales = new string[8];
             public int id;
             public string Nombre;
-            
-            public int NumeroDeSucursal
+
+            public int NumeroDeSucursal;
+
+            public int MontoDeVenta;
+
+            public int CantidadDeEmpleados;
+
+            public int CantDeClientesDelMes;
+
+            //Metodos
+            public void mostrarDatos()
             {
-
+                Console.WriteLine("La sucursal de {0} tiene un monto de venta de {1}, una cantidad de empleados igual a {2} y este mes tuvo {3} clientes", sucursales[i], MontoDeVenta,CantidadDeEmpleados, CantDeClientesDelMes);
             }
-        
-            public int MontoDeVenta
+            public void mostrarSucursales()
             {
-
+                Console.WriteLine(sucursales)
             }
 
-            public int CantidadDeEmpleados
-            {
-
-            }
-
-            public int CantDeClientesDelMes
-            {
-
-            }
         }
     }
 }
