@@ -10,38 +10,30 @@ namespace ArrayObjeto
     {
         static void Main(string[] args)
         {
-            marzo[] objMarzo = new marzo[6];
+            Console.WriteLine("Ingresar la cantidad de sucursales");
+            int cantidad = Convert.ToInt32(Console.ReadLine());
 
-            
-
-
+            for (int i = 0; i < cantidad; i++)
+            {
+                Console.WriteLine("Estamos por ingresar los datos de la sucursal {0}", i + 1);
+                
+           
+            }
+            Console.ReadKey();
         }
-        public class marzo
+        public class sucursales
         {
-            public marzo() { }
+            //Metodo constructor
+            public sucursales()
+            {
 
-            public string[] sucursales = new string[8];
-            public int id;
-            public string Nombre;
-
-            public int NumeroDeSucursal;
-
-            public int MontoDeVenta;
-
-            public int CantidadDeEmpleados;
-
-            public int CantDeClientesDelMes;
-
+            }
+            //Atributos
+            int MontoDeVenta;
+            int Empleados;
+            int Compradores;
             //Metodos
-            public void mostrarDatos()
-            {
-                Console.WriteLine("La sucursal de {0} tiene un monto de venta de {1}, una cantidad de empleados igual a {2} y este mes tuvo {3} clientes", sucursales[i], MontoDeVenta,CantidadDeEmpleados, CantDeClientesDelMes);
-            }
-            public void mostrarSucursales()
-            {
-                Console.WriteLine(sucursales)
-            }
-
+            
         }
     }
 }
