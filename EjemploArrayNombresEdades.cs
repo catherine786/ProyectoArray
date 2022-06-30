@@ -43,9 +43,5 @@ namespace sec
     public class Persona
     {
         public Persona() { }
-
-        //Creo que estas dos lineas no hacen absolutamente nada
-        public  string[] Nombres = new string[4] { "Cathy", "Axel", "Facu", "Ale" }; 
-        public int[] Edades = new int[4];
     }
 }
