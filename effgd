@@ -1,0 +1,102 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Consola02
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // instanciacion de la clase
+            
+            sucursal[] objSucursal = new sucursal[7];
+            string[] NombreSucursal = new string[] {"Once", "San Nicolas", "Almagro", "Microcentro", "Palermo", "San Cristobal", "Parque Patricios" };
+            int[] NumeroDeSucursal = new int[] {1,2,3,4,5,6,7 };
+            Console.WriteLine("Sucursales:");
+            for (int i = 0; i < 7;  i++)
+            {
+                Console.WriteLine("{0}  {1}", (i + 1), NombreSucursal[i]);
+            }
+            Console.WriteLine("Cuantas sucursales va a ingresar?");
+            int cantSuc = Convert.ToInt32(Console.ReadLine());
+
+
+            for (int i = 0; i < cantSuc; i++)
+            {
+                Console.WriteLine("De que Sucursal va a ingresar datos?");
+                int numSuc = (Convert.ToInt32(Console.ReadLine()) - 1);
+                objSucursal[numSuc] = new sucursal();
+                Console.WriteLine("Esta por ingresar los datos de la sucursal de: {0}", NombreSucursal[numSuc]);
+                Console.WriteLine("Ingresar el monto de venta del mes");
+                objSucursal[numSuc].MontoDeVenta = Convert.ToDecimal(Console.ReadLine());
+                Console.WriteLine("Ingresar la cantidad de empleados: ");
+                objSucursal[numSuc].CantDeEmpleados = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Ingresar la cantidad de clientes que compraron algo este mes: ");
+                objSucursal[numSuc].CantDeClientes = Convert.ToInt32(Console.ReadLine());
+            }
+            if (sucursal[])
+            {
+
+            }
+            // salida de informacion 
+            // calculo del promedio de la edad
+
+            Calcular.Datos(objSucursal);
+        }
+    }
+    public class sucursal
+    {
+        public int NumeroDeSucursal;
+        public decimal MontoDeVenta;
+        public int CantDeEmpleados;
+        public int CantDeClientes;
+        // constructor
+        public sucursal() {
+                
+        }
+        
+    }
+
+    public static class Calcular {
+
+        public static int Datos( sucursal[] objSuc)
+        {
+            for (int i = 0; i < objSuc.Length; i++)
+            {
+                Console.WriteLine(" El monto de venta fue de: ${0} Tienen una cantidad de: {1} empleados y {2} clientes compraron este mes", objSuc[i].MontoDeVenta, objSuc[i].CantDeEmpleados, objSuc[i].CantDeClientes);
+            }
+            return 0;
+        }
+        
+        public static int calcPromVenta(sucursal[] objPerso)
+        {
+            decimal promedio = 0;
+            decimal sumatoria = 0;
+            for (int i = 0; i < objPerso.Length; i++)
+            {
+                sumatoria = sumatoria + objPerso[i].MontoDeVenta;
+            }
+            promedio = sumatoria / objPerso.Length;
+            Console.WriteLine("El promedio de venta de todas las sucursales fue de: ${0} este mes", promedio);
+            return 0;
+        }
+        public static int VentasPorEmpleado(string[] NombreSucursal, sucursal[] objPerso)
+        {
+            int[] PromPorEmple = new int[objPerso.Length];
+            int promedio = 0;
+            for (int i = 0; i < objPerso.Length; i++)
+            {
+                int emple = objPerso[i].CantDeEmpleados;
+                int ventas = objPerso[i].CantDeClientes;
+                promedio = ventas / emple;
+                PromPorEmple[i] = promedio;
+                Console.WriteLine("Los empleados de la sucursal de {0} tuvieron un promedio de {1} ventas por empleado", NombreSucursal[i], PromPorEmple[i]);
+            }
+
+            return 0;
+        }
+    }
+}
