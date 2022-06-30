@@ -11,7 +11,7 @@ namespace Consola02
         static void Main(string[] args)
         {
             // instanciacion de la clase
-            sucursal[] objSucursal = new sucursal[2];
+            sucursal[] objSucursal = new sucursal[7];
             for (int i = 0; i < objSucursal.Length; i++)
             {
                 objSucursal[i] = new sucursal();
