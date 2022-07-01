@@ -101,7 +101,7 @@ namespace Consola02
         {
             decimal VentaMaxima = objSuc[0].MontoDeVenta;
             int n = objSuc[0].NumeroDeSucursal;
-            for (int i = 0; i > objSuc.Length; i++)
+            for (int i = 0; i < objSuc.Length; i++)
             {
                 if (VentaMaxima < objSuc[i].MontoDeVenta)
                 {
